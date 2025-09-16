@@ -52,7 +52,7 @@ This project models acoustic propagation in noisy environments. It supports both
 ## Citation
 
 If you use or adapt this project, please credit:
-> Frank McQuarrie Jr., Complex Acoustic Environment Modeling, Spring 2025
+> Frank McQuarrie Jr., CAE Modeling, Spring 2025
 ---
 
 ## Contact
