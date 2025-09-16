@@ -1,0 +1,4 @@
+numpy
+pandas
+pyDOE2
+scipy
