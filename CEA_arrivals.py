@@ -1,21 +1,21 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Mar 19 12:12:24 2025
-Complex Acoustic Environment (CAE) modeling.
+Complex Environmental Acoustics (CEA) modeling.
 Frank McQuarrie, Skidaway Institute of Oceanography
 
 Purpose of script: Calculates and plots the strength of arrivals that get to the receiver.
 
 Scripts.
-CAE_automate : current. Runs and saves outputs from propagation modeling.
-CAE_singleExperiment: Run and save a specific model.
+CEA_automate : current. Runs and saves outputs from propagation modeling.
+CEA_singleExperiment: Run and save a specific model.
 
-CAE_createEnv: Creates an environment for Bellhop to model sound through.
-CAE_ssp: Sets a soundspeed profile. Currently set to create one given stratification strength and depth.
-CAE_surfaceLevels: defines surface waves for the environment.
+CEA_createEnv: Creates an environment for Bellhop to model sound through.
+CEA_ssp: Sets a soundspeed profile. Currently set to create one given stratification strength and depth.
+CEA_surfaceLevels: defines surface waves for the environment.
 
-CAE_rayTracing: Traces (and can plot) sound pathways through the environment.
-******CAE_arrivals: Measures signal strength and arrival timing for sound through the environment. Also adds initial power, and given a detection threshold, can define a ray as detectable or not.
+CEA_rayTracing: Traces (and can plot) sound pathways through the environment.
+******CEA_arrivals: Measures signal strength and arrival timing for sound through the environment. Also adds initial power, and given a detection threshold, can define a ray as detectable or not.
 @author: fmm17241
 """
 import arlpy.uwapm as pm
@@ -27,12 +27,12 @@ import os
 # Calculates the number of arrivals, sets their strength, and defines them as detectable or undetectable.
 def calculateArrivals(topDescrip, botDescrip, sspDescrip, env, detectionThreshold, SBL):
 # Set output directory
-    base_dir = r"C:\Users\fmm17241\OneDrive - University of Georgia\data\Chapter5Scenarios\ModelOutputs"
+    base_dir = r"path"
 
     if not os.path.exists(base_dir):
         os.makedirs(base_dir)
      #Bellhop's location. You need to have previously run the AT makefile to create executables.
-    os.chdir(r"C:\Users\fmm17241\OneDrive - University of Georgia\data\toolbox\AT\executables")   
+    os.chdir(r"path\executables")   
 
     # Computes the arrival time of rays between instruments.
     arrivals = pm.compute_arrivals(env)
@@ -99,6 +99,7 @@ def calculateArrivals(topDescrip, botDescrip, sspDescrip, env, detectionThreshol
         "Value": [X_detectable, Y_undetectable, f"{avg_low_dB:.1f}", f"({ci_lower_lp:.1f}, {ci_upper_lp:.1f})"]
     })
     print(summary_df)
+
 
 
     return arrivals, binned_countsLow, low_power_dB_hist, confidence_interval, X_detectable, Y_undetectable, avg_low_dB, ci_lower_lp, ci_upper_lp, nonbottom_arrivals
