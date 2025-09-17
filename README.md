@@ -52,7 +52,7 @@ This project models acoustic propagation in noisy environments. It supports both
 ## Citation
 
 If you use or adapt this project, please credit:
-> McQuarrie, F. Jr. (2025). CAE Modeling (v1.0) [Computer software]. GitHub.(https://github.com/fmm17241/complexEnvAcoustics.git)
+> McQuarrie, F.: Complex Environmental Acoustic Modeling package. https://github.com/frankMcQuarrie/complexEnvAcoustics.git. Version 1.0 (2025)
 
 ---
 
