@@ -1,4 +1,4 @@
-# Complex Acoustic Environment Modeling
+# Complex Environmental Acoustic (CEA) Modeling
 
 **Created by Frank McQuarrie Jr., Spring 2025**
 contact@frankmcq.com
@@ -25,12 +25,12 @@ This project models acoustic propagation in noisy environments. It supports both
 
 | Script                    | Purpose                                                                                                                      |
 |---------------------------|------------------------------------------------------------------------------------------------------------------------------|
-| `CAE_automate.py`         | Automatically runs X iterations of the model, using semi-randomized environment parameters.                                  |
-| `CAE_singleExperiment.py` | Manually runs a single model simulation.                                                                                     |
-| `CAE_createEnv.py`        | Creates and configures the environment for acoustic propagation.                                                             |
-| `CAE_ssp.py`              | Generates or selects a sound speed profile (SSP) for modeling.                                                              |
-| `CAE_rayTracing.py`       | Traces and optionally plots acoustic rays through the defined environment.                                                   |
-| `CAE_arrivals.py`         | Analyzes acoustic arrivals at the receiver, outputs signal strengths, and checks detectability against a defined threshold.  |
+| `CEA_automate.py`         | Automatically runs X iterations of the model, using semi-randomized environment parameters.                                  |
+| `CEA_singleExperiment.py` | Manually runs a single model simulation.                                                                                     |
+| `CEA_createEnv.py`        | Creates and configures the environment for acoustic propagation.                                                             |
+| `CEA_ssp.py`              | Generates or selects a sound speed profile (SSP) for modeling.                                                              |
+| `CEA_rayTracing.py`       | Traces and optionally plots acoustic rays through the defined environment.                                                   |
+| `CEA_arrivals.py`         | Analyzes acoustic arrivals at the receiver, outputs signal strengths, and checks detectability against a defined threshold.  |
 
 ---
 
@@ -43,8 +43,8 @@ This project models acoustic propagation in noisy environments. It supports both
   - The structure is designed for easy modification by the user.
 
 - **Running Simulations:**  
-  - Use `CAE_singleExperiment.py` for a single, manually defined run.
-  - Use `CAE_automate.py` to batch-run multiple simulations with varied parameters.
+  - Use `CEA_singleExperiment.py` for a single, manually defined run.
+  - Use `CEA_automate.py` to batch-run multiple simulations with varied parameters.
 
 ---
 
