@@ -1,21 +1,21 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Mar 19 11:39:25 2025
-Complex Acoustic Environment (CAE) modeling.
+Complex Environmental Acoustics (CEA) modeling.
 Frank McQuarrie, Skidaway Institute of Oceanography
 
 Purpose of script: Trace sound pathways through the given environment.
 
 Scripts.
-CAE_automate : current. Runs and saves outputs from propagation modeling.
-CAE_singleExperiment: Run and save a specific model.
+CEA_automate : current. Runs and saves outputs from propagation modeling.
+CEA_singleExperiment: Run and save a specific model.
 
-CAE_createEnv: Creates an environment for Bellhop to model sound through.
-CAE_ssp: Sets a soundspeed profile. Currently set to create one given stratification strength and depth.
-CAE_surfaceLevels: defines surface waves for the environment.
+CEA_createEnv: Creates an environment for Bellhop to model sound through.
+CEA_ssp: Sets a soundspeed profile. Currently set to create one given stratification strength and depth.
+CEA_surfaceLevels: defines surface waves for the environment.
 
-*******CAE_rayTracing: Traces (and can plot) sound pathways through the environment.
-CAE_arrivals: Measures signal strength and arrival timing for sound through the environment. Also adds initial power, and given a detection threshold, can define a ray as detectable or not.
+*******CEA_rayTracing: Traces (and can plot) sound pathways through the environment.
+CEA_arrivals: Measures signal strength and arrival timing for sound through the environment. Also adds initial power, and given a detection threshold, can define a ray as detectable or not.
 """
 import os
 import arlpy.uwapm as pm
@@ -25,13 +25,12 @@ import arlpy.uwapm as pm
 
 def rayTracing(signalRange,topDescrip,botDescrip,sspDescrip,env):
     
-    #Bellhop's location.
-    os.chdir(r"C:\Users\fmm17241\OneDrive - University of Georgia\data\toolbox\AT\executables")
+    #Bellhop's location. Need to have already created using makefile.
+    os.chdir(r"C:\path\executables")
     # ALL RAYS
     rays = pm.compute_rays(env)
     # ONLY RAYS BETWEEN TRANSMITTER AND RECEIVER.
 #    #rays = pm.compute_eigenrays(env)
-
 
     pm.plot_rays(rays, env=env,
                 width=900,
@@ -90,4 +89,5 @@ def rayTracing(signalRange,topDescrip,botDescrip,sspDescrip,env):
 #    percentageRays = rays_per_distance/1000#
 
 #    return sumBDA, bdaDataFrame,percentageRays,rays,rays_per_distance
+
 
