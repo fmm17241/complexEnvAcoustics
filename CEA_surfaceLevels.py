@@ -1,21 +1,21 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Dec 19 18:27:08 2024
-Complex Acoustic Environment (CAE) modeling.
+Complex Environmental Acoustics (CEA) modeling.
 Frank McQuarrie, Skidaway Institute of Oceanography
 
-Purpose of script: Define the surface waves for acoustic modeling.
+Purpose of script: Define the surface waves for acoustic modeling. These can be changed to fit anything you would like, just a few examples chosen.
 
 Scripts.
-CAE_automate : current. Runs and saves outputs from propagation modeling.
-CAE_singleExperiment: Run and save a specific model.
+CEA_automate : current. Runs and saves outputs from propagation modeling.
+CEA_singleExperiment: Run and save a specific model.
 
-CAE_createEnv: Creates an environment for Bellhop to model sound through.
-CAE_ssp: Sets a soundspeed profile. Currently set to create one given stratification strength and depth.
-******CAE_surfaceLevels: defines surface waves for the environment.
+CEA_createEnv: Creates an environment for Bellhop to model sound through.
+CEA_ssp: Sets a soundspeed profile. Currently set to create one given stratification strength and depth.
+******CEA_surfaceLevels: defines surface waves for the environment.
 
-CAE_rayTracing: Traces (and can plot) sound pathways through the environment.
-CAE_arrivals: Measures signal strength and arrival timing for sound through the environment. Also adds initial power, and given a detection threshold, can define a ray as detectable or not.
+CEA_rayTracing: Traces (and can plot) sound pathways through the environment.
+CEA_arrivals: Measures signal strength and arrival timing for sound through the environment. Also adds initial power, and given a detection threshold, can define a ray as detectable or not.
 """
 
 import numpy as np
@@ -38,6 +38,7 @@ def rough_waves(signal_range, wave_amplitude=1.0, wave_frequency=0.01):
     num_points = range_max + 1
     return np.array([[r, -wave_amplitude * np.sin(2 * np.pi * wave_frequency * r)]
                      for r in np.linspace(0, range_max, num_points)])
+
 
 
 
