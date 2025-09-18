@@ -1,21 +1,21 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sat Apr 12 14:13:18 2025
-Complex Acoustic Environment (CAE) modeling.
+Complex Environmental Acoustics (CEA) modeling.
 Frank McQuarrie, Skidaway Institute of Oceanography
 
 Purpose of script: automatically run and save the propagation modeling for a set range of variables. Currently this is set up to grab values semi-randomly using LHS, but can easily change to static values for experiments.
 
 Scripts.
-***CAE_automate : current. Runs and saves outputs from propagation modeling.
-CAE_singleExperiment: Run and save a specific model.
+***CEA_automate : current. Runs and saves outputs from propagation modeling.
+CEA_singleExperiment: Run and save a specific model.
 
-CAE_createEnv: Creates an environment for Bellhop to model sound through.
-CAE_ssp: Sets a soundspeed profile. Currently set to create one given stratification strength and depth.
-CAE_surfaceLevels: defines surface waves for the environment.
+CEA_createEnv: Creates an environment for Bellhop to model sound through.
+CEA_ssp: Sets a soundspeed profile. Currently set to create one given stratification strength and depth.
+CEA_surfaceLevels: defines surface waves for the environment.
 
-CAE_rayTracing: Traces (and can plot) sound pathways through the environment.
-CAE_arrivals: Measures signal strength and arrival timing for sound through the environment. Also adds initial power, and given a detection threshold, can define a ray as detectable or not.
+CEA_rayTracing: Traces (and can plot) sound pathways through the environment.
+CEA_arrivals: Measures signal strength and arrival timing for sound through the environment. Also adds initial power, and given a detection threshold, can define a ray as detectable or not.
 
 @author: fmm17241
 """
@@ -29,9 +29,9 @@ import csv
 import datetime
 import pandas as pd
 # Import simulation routines.
-from CAE_createEnv import createEnv
+from CEA_createEnv import createEnv
 #from BDA_Rays2 import rayTracing
-from CAE_arrivals import calculateArrivals
+from CEA_arrivals import calculateArrivals
 import numpy as np
 import random
 from pyDOE2 import lhs  # For Latin Hypercube Sampling
@@ -84,7 +84,7 @@ if not os.path.exists(output_file2):
 # DATA FOR THE MODEL.
 # Each model will semi-randomly grab one of these categories or a number in a continuous range.
 
-# These options are fixed, categorical. This gives us bathymetry, range, and instrument depths, set in "CAE_createEnv".
+# These options are fixed, categorical. This gives us bathymetry, range, and instrument depths, set in "CAE_createEnv". Feel free to make your own.
 scenarios = ["STSNew1toSURT20Flat", "STSNew1toSURT20Linear", "STSNew1toSURT20Real",
              "SURT20toSTSNew1Flat", "SURT20toSTSNew1Linear", "SURT20toSTSNew1Real",
              "STSNew1toFS17Flat", "STSNew1toFS17Linear", "STSNew1toFS17Real",
