@@ -1,4 +1,4 @@
-# Complex Environmental Acoustic (CEA) Modeling
+# Complex Environmental Acoustics (CEA) Modeling
 
 **Created by Frank McQuarrie Jr., Spring 2025**
 contact@frankmcq.com
