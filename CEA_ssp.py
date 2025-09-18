@@ -1,21 +1,21 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Dec 19 19:52:10 2024
-Complex Acoustic Environment (CAE) modeling.
+Complex Environmental Acoustics (CEA) modeling.
 Frank McQuarrie, Skidaway Institute of Oceanography
 
 Purpose of script: Create (or define) a sound speed profile for acoustic modeling.
 
 Scripts.
-CAE_automate : current. Runs and saves outputs from propagation modeling.
-CAE_singleExperiment: Run and save a specific model.
+CEA_automate : current. Runs and saves outputs from propagation modeling.
+CEA_singleExperiment: Run and save a specific model.
 
-CAE_createEnv: Creates an environment for Bellhop to model sound through.
-******CAE_ssp: Sets a soundspeed profile. Currently set to create one given stratification strength and depth.
-CAE_surfaceLevels: defines surface waves for the environment.
+CEA_createEnv: Creates an environment for Bellhop to model sound through.
+******CEA_ssp: Sets a soundspeed profile. Currently set to create one given stratification strength and depth.
+CEA_surfaceLevels: defines surface waves for the environment.
 
-CAE_rayTracing: Traces (and can plot) sound pathways through the environment.
-CAE_arrivals: Measures signal strength and arrival timing for sound through the environment. Also adds initial power, and given a detection threshold, can define a ray as detectable or not.
+CEA_rayTracing: Traces (and can plot) sound pathways through the environment.
+CEA_arrivals: Measures signal strength and arrival timing for sound through the environment. Also adds initial power, and given a detection threshold, can define a ray as detectable or not.
 """
 
 
@@ -92,6 +92,7 @@ def build_stratified_ssp(deltaSS, gradient_depth=6, base_speed=1513.5, depth_ran
 #    }, index=depth_values)
 #
 #    return ssp_df  # Return a Pandas DataFrame
+
 
 
 
