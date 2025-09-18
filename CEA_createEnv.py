@@ -1,31 +1,31 @@
 # -*- coding: utf-8 -*-
 """
 Created on Fri Dec 20 14:51:49 2024
-Complex Acoustic Environment (CAE) modeling.
+Complex Environmental Acoustics (CEA) modeling.
 Frank McQuarrie, Skidaway Institute of Oceanography
 
 Purpose of script: Create and format an environment for Bellhop acoustic modeling.
 
 Scripts.
-CAE_automate : current. Runs and saves outputs from propagation modeling.
-CAE_singleExperiment: Run and save a specific model.
+CEA_automate : current. Runs and saves outputs from propagation modeling.
+CEA_singleExperiment: Run and save a specific model.
 
-******CAE_createEnv: Creates an environment for Bellhop to model sound through.
-CAE_ssp: Sets a soundspeed profile. Currently set to create one given stratification strength and depth.
-CAE_surfaceLevels: defines surface waves for the environment.
+******CEA_createEnv: Creates an environment for Bellhop to model sound through.
+CEA_ssp: Sets a soundspeed profile. Currently set to create one given stratification strength and depth.
+CEA_surfaceLevels: defines surface waves for the environment.
 
-CAE_rayTracing: Traces (and can plot) sound pathways through the environment.
-CAE_arrivals: Measures signal strength and arrival timing for sound through the environment. Also adds initial power, and given a detection threshold, can define a ray as detectable or not.
+CEA_rayTracing: Traces (and can plot) sound pathways through the environment.
+CEA_arrivals: Measures signal strength and arrival timing for sound through the environment. Also adds initial power, and given a detection threshold, can define a ray as detectable or not.
 """
 
 import arlpy.uwapm as pm
 import os
-import CAE_surfaceLevels
-import CAE_bathymetry
-from CAE_ssp import build_stratified_ssp
+import CEA_surfaceLevels
+import CEA_bathymetry
+from CEA_ssp import build_stratified_ssp
 
 # Script Directory
-os.chdir(r"C:\Users\fmm17241\Documents\GitHub\franksCardroom\pythonWork")
+os.chdir(r"pathHere")
 
 #################################################
 
@@ -249,4 +249,5 @@ def createEnv(
     )
 
     return env, topDescrip, sspDescrip, botDescrip, bottom, soundspeed, signalRange, SBL, tx_depth, rx_depth, detectionThreshold
+
 
