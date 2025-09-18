@@ -1,21 +1,21 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Mar 20 15:52:12 2025
-Complex Acoustic Environment (CAE) modeling.
+Complex Environmental Acoustics (CEA) modeling.
 Frank McQuarrie, Skidaway Institute of Oceanography
 
 Purpose of script: Runs a single experiment and saves the propagation modeling.
 
 Scripts.
-CAE_automate : current. Runs and saves outputs from propagation modeling.
-****CAE_singleExperiment: Run and save a specific model.
+CEA_automate : current. Runs and saves outputs from propagation modeling.
+****CEA_singleExperiment: Run and save a specific model.
 
-CAE_createEnv: Creates an environment for Bellhop to model sound through.
-CAE_ssp: Sets a soundspeed profile. Currently set to create one given stratification strength and depth.
-CAE_surfaceLevels: defines surface waves for the environment.
+CEA_createEnv: Creates an environment for Bellhop to model sound through.
+CEA_ssp: Sets a soundspeed profile. Currently set to create one given stratification strength and depth.
+CEA_surfaceLevels: defines surface waves for the environment.
 
-CAE_rayTracing: Traces (and can plot) sound pathways through the environment.
-CAE_arrivals: Measures signal strength and arrival timing for sound through the environment. Also adds initial power, and given a detection threshold, can define a ray as detectable or not.
+CEA_rayTracing: Traces (and can plot) sound pathways through the environment.
+CEA_arrivals: Measures signal strength and arrival timing for sound through the environment. Also adds initial power, and given a detection threshold, can define a ray as detectable or not.
 @author: fmm17241
 """
 import os
@@ -25,24 +25,24 @@ import arlpy.uwapm as pm
 import numpy as np
 from importlib import reload
 import matplotlib.pyplot as plt
-import CAE_createEnv
-import CAE_bathymetry 
-import CAE_surfaceLevels
-import CAE_ssp
-import CAE_rayTracing
-import CAE_arrivals
-reload(CAE_createEnv)
-reload(CAE_bathymetry)
-reload(CAE_ssp)
-reload(CAE_surfaceLevels)
-reload(CAE_rayTracing)
-reload(CAE_arrivals)
-from CAE_createEnv import createEnv
-from CAE_rayTracing import rayTracing
-from CAE_arrivals import calculateArrivals
+import CEA_createEnv
+import CEA_bathymetry 
+import CEA_surfaceLevels
+import CEA_ssp
+import CEA_rayTracing
+import CEA_arrivals
+reload(CEA_createEnv)
+reload(CEA_bathymetry)
+reload(CEA_ssp)
+reload(CEA_surfaceLevels)
+reload(CEA_rayTracing)
+reload(CEA_arrivals)
+from CEA_createEnv import createEnv
+from CEA_rayTracing import rayTracing
+from CEA_arrivals import calculateArrivals
 
 # Output Directory
-output_dir = r"C:\Users\fmm17241\OneDrive - University of Georgia\data\Chapter5Scenarios\scenarioData"
+output_dir = r"C:\path\scenarioData"
 
 
 # CREATING THE ENVIRONMENT TO WORK IN
@@ -123,6 +123,7 @@ plt.axhline(y=detectionThreshold, color='r', linestyle='--', label="Detection Th
 plt.title("Arrival Strength vs. Bottom Bounces")
 plt.legend()
 plt.show()
+
 
 
 
