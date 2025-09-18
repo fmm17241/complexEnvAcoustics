@@ -51,7 +51,7 @@ This project models acoustic propagation in noisy environments. It supports both
 ## Citation
 
 If you use or adapt this project, please credit:
-> McQuarrie, F.: Complex Environmental Acoustic Modeling package. https://github.com/frankMcQuarrie/complexEnvAcoustics.git. Version 1.0 (2025)
+> McQuarrie, F.: Complex Environmental Acoustics Modeling package. https://github.com/frankMcQuarrie/complexEnvironmentalAcoustics.git. Version 1.0 (2025)
 
 ---
 
